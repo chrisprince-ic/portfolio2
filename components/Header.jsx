@@ -19,8 +19,7 @@ const Header = () => {
         <h1 className='text-3xl sm:text-6xl lg:text-5xl font-bold'>
             A Full Stack Developer based in Toronto.
         </h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis non repudiandae dolores similique molestiae voluptas delectus illum obcaecati sapiente fuga voluptatibus nulla 
-            ad officiis temporibus impedit, quas velit cum exercitationem.</p>
+        <p>I'm a detail-oriented and innovative React JS Front-End Developer with over 5 years of experience creating responsive, scalable, and high-performance web applications. Currently, I'm focused on building accessible and user-friendly web experiences.</p>
 
         <div className='flex flex-col sm:flex-row items-center gap-4 mt-4'>
             <a href="#contact" className='px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2'>Conatct Me 

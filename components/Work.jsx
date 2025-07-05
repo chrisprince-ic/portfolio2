@@ -1,5 +1,6 @@
 import { assets, workData } from '@/assets/assets'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Work = () => {
@@ -28,10 +29,11 @@ const Work = () => {
             ))}
         
        
-         <a href="" className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto hover:bg-amber-100 duration-500'>
+         <Link href="/Projects" className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto hover:bg-amber-100 duration-500'>
+         
          Show more 
          <Image src={assets.right_arrow_bold} alt="right arrow" className='w-4'/>
-        </a> 
+        </Link>
 
 
         
