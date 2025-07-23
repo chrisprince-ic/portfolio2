@@ -78,24 +78,30 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'Frontend project',
+        title: 'Study Connect',
         description: 'Web Design',
         bgImage: '/work-1.png',
+        link:'https://study-connect-ochre.vercel.app/',
+        
+        
     },
     {
-        title: 'Geo based app',
+        title: 'Netflix Clone',
         description: 'Mobile App',
         bgImage: '/work-2.png',
+        link:'https://netflix-three-sigma.vercel.app/'
     },
     {
-        title: 'Photography site',
+        title: 'Youtube Clone',
         description: 'Web Design',
         bgImage: '/work-3.png',
+        link:'https://youtube-clone-five-flame.vercel.app/'
     },
     {
-        title: 'UI/UX designing',
+        title: 'ChrisBlog',
         description: 'UI/UX Design',
         bgImage: '/work-4.png',
+        link:'https://chrisblogfrontend.vercel.app/'
     },
 ]
 
