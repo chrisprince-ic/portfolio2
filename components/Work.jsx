@@ -20,9 +20,9 @@ const Work = () => {
                         <h2 className='font-semibold'>{project.title}</h2>
                         <p className='text-sm text-gray-500'>{project.description}</p>
                       </div>
-                      <div className='border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_black] group-hover:bg-orange-300 duration-500'>
-                        <Image src={assets.send_icon} alt="send icon" className='w-6 ' href ={project.link} />
-                      </div> 
+                      <Link href ={project.link} passHref className='border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_black] group-hover:bg-orange-300 duration-500'>
+                        <Image src={assets.send_icon} alt="send icon" className='w-6 '  />
+                      </Link> 
                     </div>
                 
                 </div>
