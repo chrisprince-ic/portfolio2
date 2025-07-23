@@ -9,7 +9,7 @@ const About = () => {
         <h2 className='text-center text-5xl'>About me</h2>
         <div className='flex w-full flex-col lg:flex-row items-center gap-20 my-20' >
             <div className='w-64 sm:w-80 rounded-3xl max-w-none'>
-                <Image src={assets.user_image} alt="user-profile"className='w-full rounded-3xl'/>
+                <Image src={assets.profile_img} alt="user-profile"className='w-full rounded-3xl'/>
             </div>
             <div className='flex-1'>
                 <p className='mb-10 max-w-2xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis enim magni sint aliquid dignissimos harum pariatur, asperiores ipsa saepe minus magnam deserunt iusto,
