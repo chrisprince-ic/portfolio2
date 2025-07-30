@@ -46,7 +46,7 @@ const Skills = () => {
               Skills
             </h3>
             
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
               {allSkills.map((skill, index) => (
                 <motion.div
                   key={index}
@@ -55,7 +55,7 @@ const Skills = () => {
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -8, scale: 1.05 }}
-                  className="aspect-square bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group border border-gray-200 dark:border-gray-600 flex flex-col justify-center items-center"
+                  className="aspect-square bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group border border-gray-200 dark:border-gray-600 flex flex-col justify-center items-center"
                 >
                   <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
                     {skill.icon}

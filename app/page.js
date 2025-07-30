@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -7,6 +7,7 @@ import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
+import { throttle } from '@/lib/utils';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
@@ -20,8 +21,8 @@ export default function Home() {
     contact: useRef(null)
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
+  const handleScroll = useCallback(
+    throttle(() => {
       const scrollPosition = window.scrollY + 100;
       
       Object.entries(sections).forEach(([sectionName, ref]) => {
@@ -32,11 +33,14 @@ export default function Home() {
           }
         }
       });
-    };
+    }, 100),
+    []
+  );
 
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   const scrollToSection = (sectionName) => {
     if (sections[sectionName]?.current) {

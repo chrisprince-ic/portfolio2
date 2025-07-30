@@ -30,13 +30,18 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center lg:text-left order-2 lg:order-1"
           >
-            <Image
-              src="/profile-img.png"
-              alt="Christian Ikirezi"
-              width={300}
-              height={300}
-              className="mx-auto lg:mx-0 rounded-full border-4 border-white dark:border-gray-700 shadow-2xl mb-8 w-64 h-64 sm:w-80 sm:h-80 object-cover"
-            />
+            <div className="mx-auto lg:mx-0 mb-8">
+              <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full border-4 border-white dark:border-gray-700 shadow-2xl overflow-hidden relative">
+                <Image
+                  src="/profile-img.png"
+                  alt="Christian Ikirezi"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, 320px"
+                />
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
