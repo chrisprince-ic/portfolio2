@@ -1,59 +1,131 @@
-import { assets } from '@/assets/assets'
-import Image from 'next/image'
-import React, { useState } from 'react'
+'use client';
+import { motion } from 'framer-motion';
+import { Github, Linkedin, Mail, Globe } from 'lucide-react';
 
 const Contact = () => {
-  const [result, setResult] = useState("");
-
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
-
-    formData.append("access_key", "340751ab-717d-4e80-b1db-1e23e9e4afbf");
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
-  };
   return (
-    <div id ="contact" className="w-full px-[12%] py-10 scroll-mt-20 bg-no-repeat bg-[length:90%_auto] bg-center"  style={{ backgroundImage: "url('/footer-bg-color.png')" }}>
-        <h4 className='text-center mb-2 text-lg'>Connect with me</h4>
-        <h2 className='text-center text-5xl'>Get in touch</h2>
-        <p className='text-center max-w-2xl mx-auto mt-5 mb-12'>Lorem ipsum dolor similique mollitia enim 
-            repudiandae nulla voluptates, quas corporis voluptatem dolorum quaerat ex consequatur atque deleniti rem ullam?</p>
+    <section className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-800">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-12 sm:mb-16"
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+            Let&apos;s Work Together
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            I&apos;m always open to discussing new opportunities and exciting projects.
+          </p>
+        </motion.div>
 
-        <form onSubmit={onSubmit} className='w-full max-w-2xl mx-auto flex flex-col gap-6' autoComplete="off">
-            <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
-                <input type="text" placeholder='Enter you name' name='name' required
-                className='border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500'
-                />
-                <input type="email" placeholder='Enter your email' name='email' required 
-                className='border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500'
-                />
-            
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-6 sm:space-y-8"
+          >
+            <div>
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6">Get In Touch</h3>
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6 sm:mb-8">
+                Ready to start a project or just want to chat? Feel free to reach out!
+              </p>
             </div>
-            <textarea rows='6' placeholder='Enter your message' name='message' required 
-            className='border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none'
-            ></textarea>
-            <button className="py-3 px-8 w-max flex items-center justify-between rounded-full
-            gap-2 text-white bg-black hover:bg-gray-700 transition-colors duration-300 mx-auto
-            " type='submit'>Submit now <Image src={assets.right_arrow_white} className='w-4'alt="" /></button>
-            <p className='mt-4'>{result}</p>
-        </form>
-    </div>
-  )
-}
 
-export default Contact
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">Email</h4>
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">christianikirezi@gmail.com</p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center">
+                  <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-400" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">Location</h4>
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Toronto, Canada</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex space-x-3 sm:space-x-4">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-900 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
+              >
+                <Github className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
+              >
+                <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-white dark:bg-gray-900 p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700"
+          >
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6">Send Message</h3>
+            <form className="space-y-4 sm:space-y-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                <input
+                  type="text"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                  placeholder="Your name"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                <input
+                  type="email"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                  placeholder="your@email.com"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                <textarea
+                  rows={4}
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                  placeholder="Tell me about your project..."
+                ></textarea>
+              </div>
+              
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+              >
+                Send Message
+              </button>
+            </form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
