@@ -60,7 +60,7 @@ const Contact = () => {
 
             <div className="flex space-x-3 sm:space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/chrisprince-ic"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-900 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
@@ -68,7 +68,7 @@ const Contact = () => {
                 <Github className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/christian-ikirezi-8b395021a/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"

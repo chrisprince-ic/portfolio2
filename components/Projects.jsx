@@ -10,7 +10,7 @@ const Projects = () => {
       description: "A full-featured YouTube clone with video streaming, user authentication, and real-time comments.",
       image: "/work-3.png",
       link: "https://youtube-clone-five-flame.vercel.app/",
-      github: "https://github.com/yourusername/youtube-clone",
+      github: "https://github.com/chrisprince-ic/youtube-clone",
       technologies: ["React", "Next.js", "Firebase", "Tailwind CSS"]
     },
     {
@@ -18,7 +18,7 @@ const Projects = () => {
       description: "Streaming platform clone with movie browsing, user profiles, and responsive design.",
       image: "/work-2.png",
       link: "https://netflix-three-sigma.vercel.app/",
-      github: "https://github.com/yourusername/netflix-clone",
+      github: "https://github.com/chrisprince-ic/Netflix",
       technologies: ["React", "Next.js", "Tailwind CSS", "TMDB API"]
     },
     {
@@ -26,7 +26,7 @@ const Projects = () => {
       description: "Educational platform for students to connect, collaborate, and share resources.",
       image: "/work-1.png",
       link: "https://study-connect-ochre.vercel.app/",
-      github: "https://github.com/yourusername/studyconnect",
+      github: "https://github.com/chrisprince-ic/StudyConnect",
       technologies: ["React", "Node.js", "MongoDB", "Express"]
     },
     {
@@ -34,7 +34,7 @@ const Projects = () => {
       description: "Modern blog platform built with Next.js featuring markdown support and responsive design.",
       image: "/work-4.png",
       link: "https://next-blog-starter-psi.vercel.app/",
-      github: "https://github.com/yourusername/next-blog",
+      github: "https://github.com/chrisprince-ic/next-blog-starter",
       technologies: ["Next.js", "React", "Markdown", "Tailwind CSS"]
     }
   ];

@@ -135,7 +135,7 @@ const Hero = ({ scrollToSection }) => {
               <motion.a
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                href="/sample-resume.pdf"
+                href="/ChristianIkireziResume.pdf"
                 download
                 className="group flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-2 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-semibold rounded-xl hover:border-blue-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
