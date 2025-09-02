@@ -194,8 +194,8 @@ const Hero = ({ scrollToSection }) => {
                   className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-xl border border-gray-200 dark:border-gray-700"
                 >
                   <div className="text-center">
-                    <div className="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white">5+</div>
-                    <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
+                    <div className="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white">Crafting Daily</div>
+                    <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Continuous Learning</div>
                   </div>
                 </motion.div>
                 

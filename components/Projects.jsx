@@ -6,36 +6,54 @@ import Image from 'next/image';
 const Projects = () => {
   const projects = [
     {
+      title: "IceComm",
+      description: "Online marketplace with fast delivery.",
+      inspirationTitle: "Inspired by frictionless shopping",
+      inspirationDesc: "Explored checkout flows and trust signals from top e‑commerce brands to craft a clean and fast experience.",
+      image: "/ecomm.png",
+      link: "https://icecommwebsite.vercel.app/",
+      github: "#",
+      technologies: ["Next.js", "React", "Tailwind CSS"]
+    },
+    {
       title: "YouTube Clone",
-      description: "A full-featured YouTube clone with video streaming, user authentication, and real-time comments.",
-      image: "/work-3.png",
+      description: "YouTube clone: streaming, auth, comments.",
+      inspirationTitle: "Learning at scale",
+      inspirationDesc: "Built to understand video delivery patterns and engagement loops found in creator platforms.",
+      image: "/youtube.png",
       link: "https://youtube-clone-five-flame.vercel.app/",
       github: "https://github.com/chrisprince-ic/youtube-clone",
       technologies: ["React", "Next.js", "Firebase", "Tailwind CSS"]
     },
     {
       title: "Netflix Clone",
-      description: "Streaming platform clone with movie browsing, user profiles, and responsive design.",
-      image: "/work-2.png",
+      description: "Streaming UI with profiles and TMDB.",
+      inspirationTitle: "Cinematic UX",
+      inspirationDesc: "Focused on rich browsing, hover previews, and recommendation layout patterns.",
+      image: "/netflix.png",
       link: "https://netflix-three-sigma.vercel.app/",
       github: "https://github.com/chrisprince-ic/Netflix",
       technologies: ["React", "Next.js", "Tailwind CSS", "TMDB API"]
     },
     {
       title: "StudyConnect Platform",
-      description: "Educational platform for students to connect, collaborate, and share resources.",
-      image: "/work-1.png",
+      description: "Students connect, collaborate, share resources.",
+      inspirationTitle: "Peer learning",
+      inspirationDesc: "Designed from discussions with students needing lightweight spaces to share notes and form study groups.",
+      image: "/studyconnect.png",
       link: "https://study-connect-ochre.vercel.app/",
       github: "https://github.com/chrisprince-ic/StudyConnect",
-      technologies: ["React", "Node.js", "MongoDB", "Express"]
+      technologies: ["Next.js", "Tailwind CSS", "Firebase"]
     },
     {
       title: "Next.js Blog",
-      description: "Modern blog platform built with Next.js featuring markdown support and responsive design.",
-      image: "/work-4.png",
+      description: "Modern blog with responsive design.",
+      inspirationTitle: "Writing, simplified",
+      inspirationDesc: "Kept typography first with minimal UI to focus on ideas over interface.",
+      image: "/blog.png",
       link: "https://next-blog-starter-psi.vercel.app/",
       github: "https://github.com/chrisprince-ic/next-blog-starter",
-      technologies: ["Next.js", "React", "Markdown", "Tailwind CSS"]
+      technologies: ["Next.js", "CSS"]
     }
   ];
 
@@ -68,7 +86,7 @@ const Projects = () => {
               whileHover={{ y: -10, scale: 1.02 }}
               className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-200 dark:border-gray-700"
             >
-              <div className="aspect-video relative overflow-hidden">
+              <div className="aspect-video relative overflow-hidden rounded-t-2xl border border-gray-300 dark:border-gray-700">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -79,8 +97,18 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2">{project.title}</h3>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">
+                    {project.title.split(' ').map(word => word[0]).join('').slice(0,3)}
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">{project.title}</h3>
+                </div>
                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
+                <div className="bg-gray-50 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700 rounded-lg p-3 sm:p-4 mb-4">
+                  <div className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">Inspiration</div>
+                  <div className="text-sm sm:text-base text-gray-800 dark:text-gray-200 font-medium">{project.inspirationTitle}</div>
+                  <p className="mt-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400">{project.inspirationDesc}</p>
+                </div>
                 <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                   {project.technologies.map((tech, i) => (
                     <span key={i} className="px-2 sm:px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs sm:text-sm rounded-full">

@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) => {
+const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen, mode = 'home' }) => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 300], [0, -50]);
   const [isDark, setIsDark] = useState(false);
@@ -48,25 +48,35 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {[
-              { name: 'Home', id: 'home' },
-              { name: 'About', id: 'about' },
-              { name: 'Projects', id: 'projects' },
-              { name: 'Skills', id: 'skills' },
-              { name: 'Contact', id: 'contact' }
-            ].map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`transition-colors duration-300 ${
-                  activeSection === item.id
-                    ? 'text-blue-600 dark:text-blue-400 font-semibold'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
+            {mode === 'home' ? (
+              <>
+                {[
+                  { name: 'Home', id: 'home' },
+                  { name: 'About', id: 'about' },
+                  { name: 'Projects', id: 'projects' },
+                  { name: 'Skills', id: 'skills' },
+                  { name: 'Contact', id: 'contact' }
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection && scrollToSection(item.id)}
+                    className={`transition-colors duration-300 ${
+                      activeSection === item.id
+                        ? 'text-blue-600 dark:text-blue-400 font-semibold'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                ))}
+                <a href="/blog" className="transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+              </>
+            ) : (
+              <>
+                <a href="/" className="transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+                <a href="/blog" className="transition-colors duration-300 text-blue-600 dark:text-blue-400 font-semibold">Blog</a>
+              </>
+            )}
           </div>
 
           {/* Desktop Actions */}
@@ -117,7 +127,7 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
+        {isMenuOpen && mode === 'home' && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -143,6 +153,7 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
                 {item.name}
               </button>
             ))}
+            <a href="/blog" className="block w-full text-left px-4 py-2 transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800">Blog</a>
             
             {/* Mobile Social Links */}
             <div className="flex justify-center space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700 mt-4">
