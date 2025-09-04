@@ -25,8 +25,8 @@ export const metadata = {
   publisher: "Christian Ikirezi",
   robots: "index, follow",
   openGraph: {
-    title: "Christian Ikirezi - Frontend Developer Portfolio",
-    description: "Professional Frontend Developer specializing in React, Next.js, TypeScript, and modern web technologies.",
+    title: "Christian Ikirezi - Software Developer Portfolio",
+    description: "Professional Software Developer specializing in React, Next.js, TypeScript, and modern web technologies.",
     type: "website",
     locale: "en_US",
     siteName: "Christian Ikirezi Portfolio",

@@ -87,7 +87,7 @@ const Hero = ({ scrollToSection }) => {
               className="space-y-4"
             >
               <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
-                Full Stack Developer
+                Software Developer
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed">
                 Crafting exceptional digital experiences with modern web technologies. 
