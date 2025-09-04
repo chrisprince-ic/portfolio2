@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { ExternalLink, Code } from 'lucide-react';
+import { ExternalLink, Code, Play } from 'lucide-react';
 import Image from 'next/image';
 
 const Projects = () => {
@@ -13,6 +13,7 @@ const Projects = () => {
       image: "/ecomm.png",
       link: "https://icecommwebsite.vercel.app/",
       github: "#",
+      video: "https://youtu.be/5mkiX7Tzl04",
       technologies: ["Next.js", "React", "Tailwind CSS"]
     },
     {
@@ -23,6 +24,7 @@ const Projects = () => {
       image: "/youtube.png",
       link: "https://youtube-clone-five-flame.vercel.app/",
       github: "https://github.com/chrisprince-ic/youtube-clone",
+      video: "https://youtu.be/CZcQhpb76fI",
       technologies: ["React", "Next.js", "Firebase", "Tailwind CSS"]
     },
     {
@@ -33,6 +35,7 @@ const Projects = () => {
       image: "/netflix.png",
       link: "https://netflix-three-sigma.vercel.app/",
       github: "https://github.com/chrisprince-ic/Netflix",
+      video: "https://youtu.be/5AaBUpkAEU0",
       technologies: ["React", "Next.js", "Tailwind CSS", "TMDB API"]
     },
     {
@@ -43,6 +46,7 @@ const Projects = () => {
       image: "/studyconnect.png",
       link: "https://study-connect-ochre.vercel.app/",
       github: "https://github.com/chrisprince-ic/StudyConnect",
+      video: "https://youtu.be/nnMDjtnlM_I",
       technologies: ["Next.js", "Tailwind CSS", "Firebase"]
     },
     {
@@ -126,6 +130,17 @@ const Projects = () => {
                     <ExternalLink className="w-4 h-4" />
                     Live Demo
                   </a>
+                  {project.video && (
+                    <a
+                      href={project.video}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-red-600 text-white py-2 px-3 sm:px-4 rounded-lg hover:bg-red-700 transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
+                    >
+                      <Play className="w-4 h-4" />
+                      Video
+                    </a>
+                  )}
                   <a
                     href={project.github}
                     target="_blank"

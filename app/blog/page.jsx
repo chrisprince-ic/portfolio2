@@ -1,6 +1,9 @@
 'use client';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Play, X } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 
 const posts = [
@@ -31,28 +34,32 @@ const posts = [
     title: 'Inspiration Behind IceComm',
     excerpt: 'Designing frictionless e‑commerce: trust signals, speed, and clarity.',
     tags: ['Inspiration', 'UX', 'E‑commerce'],
-    readTime: '3 min read'
+    readTime: '3 min read',
+    videoId: '5mkiX7Tzl04'
   },
   {
     slug: 'inspiration-youtube-clone',
     title: 'Inspiration Behind the YouTube Clone',
     excerpt: 'Studying video UX, engagement loops, and creator‑centric patterns.',
     tags: ['Inspiration', 'Video', 'Product'],
-    readTime: '4 min read'
+    readTime: '4 min read',
+    videoId: 'CZcQhpb76fI'
   },
   {
     slug: 'inspiration-netflix-clone',
     title: 'Inspiration Behind the Netflix Clone',
     excerpt: 'Cinematic browsing: previews, recommendations, and micro‑interactions.',
     tags: ['Inspiration', 'Streaming', 'UI'],
-    readTime: '4 min read'
+    readTime: '4 min read',
+    videoId: '5AaBUpkAEU0'
   },
   {
     slug: 'inspiration-studyconnect',
     title: 'Inspiration Behind StudyConnect',
     excerpt: 'Peer learning, lightweight collaboration, and student‑first flows.',
     tags: ['Inspiration', 'Education', 'UX'],
-    readTime: '3 min read'
+    readTime: '3 min read',
+    videoId: 'nnMDjtnlM_I'
   },
   {
     slug: 'inspiration-nextjs-blog',
@@ -64,6 +71,7 @@ const posts = [
 ];
 
 export default function BlogPage() {
+  const [activeVideo, setActiveVideo] = useState(null);
   return (
     <section className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Navbar mode="blog" />
@@ -91,6 +99,28 @@ export default function BlogPage() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="group bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all overflow-hidden"
             >
+              {post.videoId && (
+                <button
+                  type="button"
+                  onClick={() => setActiveVideo(post.videoId)}
+                  className="relative w-full aspect-video overflow-hidden"
+                  aria-label={`Play video for ${post.title}`}
+                >
+                  <Image
+                    src={`https://img.youtube.com/vi/${post.videoId}/hqdefault.jpg`}
+                    alt={post.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/90 text-gray-900 shadow-lg group-hover:scale-105 transition-transform">
+                      <Play className="w-6 h-6" />
+                    </span>
+                  </div>
+                </button>
+              )}
               <div className="p-5 sm:p-6">
                 <div className="flex items-center gap-2 mb-3">
                   {post.tags.map(tag => (
@@ -116,6 +146,35 @@ export default function BlogPage() {
           ))}
         </div>
       </div>
+
+      {activeVideo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/70" onClick={() => setActiveVideo(null)} />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="relative w-[92vw] md:w-[80vw] lg:w-[60vw] aspect-video bg-black rounded-xl overflow-hidden shadow-2xl"
+          >
+            <button
+              type="button"
+              onClick={() => setActiveVideo(null)}
+              className="absolute top-3 right-3 z-10 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/90 text-gray-900 hover:bg-white"
+              aria-label="Close video"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <iframe
+              src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1&rel=0`}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </motion.div>
+        </div>
+      )}
     </section>
   );
 }
