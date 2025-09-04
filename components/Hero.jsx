@@ -71,10 +71,10 @@ const Hero = ({ scrollToSection }) => {
               transition={{ duration: 1, delay: 0.4 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
             >
-              <span className="block text-gray-900 dark:text-white">
-                Christian
+              <span className="text-gray-900 dark:text-white">
+                Christian{' '}
               </span>
-              <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 bg-clip-text text-transparent">
                 Ikirezi
               </span>
             </motion.h1>
