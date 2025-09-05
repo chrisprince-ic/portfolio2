@@ -17,7 +17,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            I&apos;m a passionate frontend developer skilled in React, Next.js, Vite, Tailwind, and Figma. 
+            I&apos;m a passionate Softwaredeveloper skilled in React, Next.js, Vite, Tailwind, and More. 
             I build fast and beautiful web apps with a focus on clean UI/UX.
           </p>
         </motion.div>
@@ -52,9 +52,10 @@ const About = () => {
             className="space-y-6 order-1 lg:order-2"
           >
             <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I&apos;m a detail-oriented and innovative React JS Front-End Developer with over 5 years of experience 
-              creating responsive, scalable, and high-performance web applications. Currently, I&apos;m focused on 
-              building accessible and user-friendly web experiences.
+              Detail-oriented and innovative Web Developer with a strong background in creating responsive, scalable web applications.
+              Known for delivering user-friendly interfaces, integrating reliable backend systems, and optimizing performance to enhance
+              the user experience. A collaborative problem-solver who adapts quickly, learns fast, and brings fresh ideas to tackle real-
+              world challenges with code.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
