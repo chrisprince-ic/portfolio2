@@ -102,13 +102,17 @@ const Hero = ({ scrollToSection }) => {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-wrap gap-2 sm:gap-3"
             >
-              {['React', 'Next.js', 'TypeScript', 'Tailwind CSS'].map((tech, index) => (
+              {['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Git', 'And More'].map((tech, index) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
-                  className="px-3 sm:px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-full text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 shadow-sm hover:shadow-md transition-all duration-300"
+                  className={`px-3 sm:px-4 py-2 backdrop-blur-sm border rounded-full text-xs sm:text-sm font-medium shadow-sm hover:shadow-md transition-all duration-300 ${
+                    tech === 'And More' 
+                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white border-purple-400 hover:from-purple-600 hover:to-pink-600' 
+                      : 'bg-white/80 dark:bg-gray-800/80 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300'
+                  }`}
                 >
                   {tech}
                 </motion.span>
