@@ -1,7 +1,8 @@
 'use client';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import Navbar from '@/components/Navbar';
+import { motion } from 'framer-motion';
+import { Home } from 'lucide-react';
 
 const content = {
   'will-ai-replace-software-engineers': {
@@ -44,19 +45,55 @@ export default function BlogPost({ params }) {
   if (!post) return notFound();
 
   return (
-    <section className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Navbar mode="blog" />
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
-        <Link href="/blog" className="text-blue-600 dark:text-blue-400 hover:underline">← Back to blog</Link>
-        <h1 className="mt-4 text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">{post.title}</h1>
-        <article className="prose dark:prose-invert prose-blue max-w-none mt-6">
+    <section className="min-h-screen py-16 sm:py-20 relative">
+      <div className="max-w-3xl mx-auto px-3 sm:px-4 lg:px-0 pb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-10 sm:mb-12"
+        >
+          <Link
+            href="/blog"
+            className="inline-flex items-center text-xs sm:text-sm text-slate-600 hover:underline underline-offset-4"
+          >
+            ← Back to blog
+          </Link>
+          <h1 className="mt-4 text-3xl sm:text-4xl font-bold text-slate-900 font-handwritten">
+            {post.title}
+          </h1>
+        </motion.div>
+        <motion.article
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="space-y-6 text-slate-800 text-sm sm:text-base leading-relaxed"
+        >
           <p>{post.body}</p>
-          <h3>Key takeaways</h3>
-          <ul>
-            <li>Invest in fundamentals: architecture, performance, accessibility.</li>
-            <li>Close the loop with tests, telemetry, and code reviews.</li>
-          </ul>
-        </article>
+          <div className="mt-4 border-l-2 border-slate-900/40 pl-4 py-2">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 mb-1">
+              Key takeaways
+            </h3>
+            <ul className="list-disc list-outside pl-4 space-y-1 text-slate-700 text-sm">
+              <li>Invest in fundamentals: architecture, performance, accessibility.</li>
+              <li>Close the loop with tests, telemetry, and thoughtful code reviews.</li>
+            </ul>
+          </div>
+        </motion.article>
+      </div>
+
+      {/* Simple bottom nav just for Home on blog detail page */}
+      <div className="fixed inset-x-0 bottom-5 z-40 flex justify-center pointer-events-none">
+        <div className="pointer-events-auto flex items-center gap-2 rounded-full border border-slate-200/90 bg-white/95 shadow-[0_18px_38px_rgba(15,23,42,0.2)] backdrop-blur-md px-4 py-2 sm:px-6 sm:py-3">
+          <Link
+            href="/"
+            className="flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs sm:text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+          >
+            <Home className="h-4 w-4 sm:h-5 sm:w-5" />
+            <span className="hidden sm:inline">Back to Home</span>
+            <span className="sm:hidden">Home</span>
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 
 /* Your custom styles */
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Outfit, Caveat } from "next/font/google";
 import "./globals.css";
 
 // Initialize fonts with proper syntax
@@ -14,6 +14,12 @@ const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-outfit",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-hand",
 });
 
 export const metadata = {
@@ -51,8 +57,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth dark">
-      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased leading-8 overflow-x-hidden`}>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.variable} ${outfit.variable} ${caveat.variable} font-sans antialiased leading-8 overflow-x-hidden`}>
         {children}
       </body>
     </html>

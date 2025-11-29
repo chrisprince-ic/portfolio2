@@ -17,19 +17,19 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-10 sm:py-12">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-0">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Skills & Technologies
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
             Here are the technologies and tools I use to bring ideas to life.
           </p>
         </motion.div>
@@ -40,22 +40,22 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white text-center">
+            <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 text-center">
               Skills
             </h3>
             
-            <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-5xl mx-auto">
               {allSkills.map((skill, index) => (
                 <motion.span
                   key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, scale: 0.85 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  transition={{ duration: 0.4, delay: index * 0.03 }}
                   viewport={{ once: true }}
-                  whileHover={{ scale: 1.05 }}
-                  className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium rounded-full border border-blue-200 dark:border-blue-700 hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-all duration-300"
+                  whileHover={{ scale: 1.04 }}
+                  className="px-4 py-2 bg-slate-50 text-teal-700 text-sm font-medium rounded-full border border-slate-200 hover:border-teal-400 hover:bg-white transition-all duration-300"
                 >
                   {skill}
                 </motion.span>
@@ -72,7 +72,7 @@ const Skills = () => {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8">
+          <h3 className="text-2xl font-semibold text-slate-900 mb-8">
             Additional Skills
           </h3>
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
@@ -88,7 +88,7 @@ const Skills = () => {
                 transition={{ duration: 0.5, delay: 0.9 + (index * 0.02) }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
-                className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium rounded-full border border-blue-200 dark:border-blue-700 hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-all duration-300"
+                className="px-4 py-2 bg-slate-100 text-slate-700 text-sm font-medium rounded-full border border-slate-200 hover:bg-white hover:border-teal-400 transition-all duration-300"
               >
                 {skill}
               </motion.span>

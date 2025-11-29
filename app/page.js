@@ -4,14 +4,15 @@ import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
-import Navbar from '@/components/Navbar';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
+import BottomNav from '@/components/BottomNav';
+import CursorGlow from '@/components/CursorGlow';
+import AiAssistant from '@/components/AiAssistant';
 import { throttle } from '@/lib/utils';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const sections = {
     home: useRef(null),
@@ -23,8 +24,8 @@ export default function Home() {
 
   const handleScroll = useCallback(
     throttle(() => {
-      const scrollPosition = window.scrollY + 100;
-      
+      const scrollPosition = window.scrollY + 120;
+
       Object.entries(sections).forEach(([sectionName, ref]) => {
         if (ref.current) {
           const { offsetTop, offsetHeight } = ref.current;
@@ -49,46 +50,44 @@ export default function Home() {
         block: 'start'
       });
     }
-    setIsMenuOpen(false);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
-      {/* Navigation */}
-      <Navbar 
-        activeSection={activeSection}
-        scrollToSection={scrollToSection}
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-      />
+    <div className="min-h-screen text-slate-900 relative bg-transparent">
+      <CursorGlow />
+      <main className="pt-6 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto space-y-12 sm:space-y-16">
+          {/* Hero Section */}
+          <div ref={sections.home} className="scroll-mt-32">
+            <Hero scrollToSection={scrollToSection} />
+          </div>
 
-      {/* Hero Section */}
-      <div ref={sections.home}>
-        <Hero scrollToSection={scrollToSection} />
-      </div>
+          {/* About Section */}
+          <div ref={sections.about} className="scroll-mt-32">
+            <About />
+          </div>
 
-      {/* About Section */}
-      <div ref={sections.about}>
-        <About />
-      </div>
+          {/* Projects Section */}
+          <div ref={sections.projects} className="scroll-mt-32">
+            <Projects />
+          </div>
 
-      {/* Projects Section */}
-      <div ref={sections.projects}>
-        <Projects />
-      </div>
+          {/* Skills Section */}
+          <div ref={sections.skills} className="scroll-mt-32">
+            <Skills />
+          </div>
 
-      {/* Skills Section */}
-      <div ref={sections.skills}>
-        <Skills />
-      </div>
+          {/* Contact Section */}
+          <div ref={sections.contact} className="scroll-mt-32">
+            <Contact />
+          </div>
 
-      {/* Contact Section */}
-      <div ref={sections.contact}>
-        <Contact />
-      </div>
-
-      {/* Footer */}
-      <Footer />
+          {/* Footer */}
+          <Footer />
+        </div>
+      </main>
+      <AiAssistant />
+      <BottomNav activeSection={activeSection} scrollToSection={scrollToSection} />
     </div>
   );
 }
