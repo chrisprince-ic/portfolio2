@@ -9,6 +9,7 @@ import Skills from '@/components/Skills';
 import BottomNav from '@/components/BottomNav';
 import CursorGlow from '@/components/CursorGlow';
 import AiAssistant from '@/components/AiAssistant';
+import SocialMedia from '@/components/SocialMedia';
 import { throttle } from '@/lib/utils';
 
 export default function Home() {
@@ -87,6 +88,7 @@ export default function Home() {
         </div>
       </main>
       <AiAssistant />
+      <SocialMedia />
       <BottomNav activeSection={activeSection} scrollToSection={scrollToSection} />
     </div>
   );
