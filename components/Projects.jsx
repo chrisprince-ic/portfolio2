@@ -28,15 +28,14 @@ const Projects = () => {
       technologies: ["React", "Next.js", "Firebase", "Tailwind CSS"]
     },
     {
-      title: "Netflix Clone",
-      description: "Streaming UI with profiles and TMDB.",
-      inspirationTitle: "Cinematic UX",
-      inspirationDesc: "Focused on rich browsing, hover previews, and recommendation layout patterns.",
-      image: "/netflix.png",
-      link: "https://netflix-three-sigma.vercel.app/",
-      github: "https://github.com/chrisprince-ic/Netflix",
-      video: "https://youtu.be/5AaBUpkAEU0",
-      technologies: ["React", "Next.js", "Tailwind CSS", "TMDB API"]
+      title: "Volvid AI",
+      description: "AI video generation from images and text prompts.",
+      inspirationTitle: "Making video creation effortless",
+      inspirationDesc: "Built to let anyone create videos by simply providing images and a text prompt — no editing skills needed.",
+      image: "https://image.thum.io/get/width/800/crop/500/https://volvidai.vercel.app/",
+      link: "https://volvidai.vercel.app/",
+      github: "#",
+      technologies: ["Next.js", "TypeScript", "AI", "Tailwind CSS", "Vercel"]
     },
     {
       title: "StudyConnect Platform",
@@ -49,16 +48,6 @@ const Projects = () => {
       video: "https://youtu.be/nnMDjtnlM_I",
       technologies: ["Next.js", "Tailwind CSS", "Firebase"]
     },
-    {
-      title: "Next.js Blog",
-      description: "Modern blog with responsive design.",
-      inspirationTitle: "Writing, simplified",
-      inspirationDesc: "Kept typography first with minimal UI to focus on ideas over interface.",
-      image: "/blog.png",
-      link: "https://next-blog-starter-psi.vercel.app/",
-      github: "https://github.com/chrisprince-ic/next-blog-starter",
-      technologies: ["Next.js", "CSS"]
-    }
   ];
 
   const noteColors = [
@@ -111,6 +100,7 @@ const Projects = () => {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  unoptimized={project.image.startsWith('http')}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>

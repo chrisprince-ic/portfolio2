@@ -5,6 +5,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
+import FeaturedProducts from '@/components/FeaturedProducts';
 import Skills from '@/components/Skills';
 import BottomNav from '@/components/BottomNav';
 import CursorGlow from '@/components/CursorGlow';
@@ -68,8 +69,13 @@ export default function Home() {
             <About />
           </div>
 
-          {/* Projects Section */}
+          {/* Shipped Products Section */}
           <div ref={sections.projects} className="scroll-mt-32">
+            <FeaturedProducts />
+          </div>
+
+          {/* Other Projects Section */}
+          <div className="scroll-mt-32">
             <Projects />
           </div>
 
