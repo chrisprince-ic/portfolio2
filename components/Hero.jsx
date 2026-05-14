@@ -148,8 +148,8 @@ const Hero = ({ scrollToSection }) => {
                   className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 bg-sky-100 text-slate-950 p-3 sm:p-4 shadow-[0_12px_24px_rgba(15,23,42,0.2)] border border-sky-200"
                 >
                   <div className="text-center">
-                    <div className="text-lg sm:text-2xl font-bold">5+ yrs</div>
-                    <div className="text-xs sm:text-sm opacity-90">Web experience</div>
+                    <div className="text-lg sm:text-2xl font-bold">Intern</div>
+                    <div className="text-xs sm:text-sm opacity-90">Ready to contribute</div>
                   </div>
                 </motion.div>
               </div>
