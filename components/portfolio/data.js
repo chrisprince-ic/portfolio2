@@ -1,6 +1,7 @@
 export const EMAIL = 'christianikirezi@gmail.com';
 export const LINKS = {
   resume: '/ChristianIkireziResume.pdf',
+  resumeFile: 'Christian-Ikirezi-Resume.pdf',
   github: 'https://github.com/chrisprince-ic',
   linkedin: 'https://linkedin.com/in/christian-ikirezi',
 };

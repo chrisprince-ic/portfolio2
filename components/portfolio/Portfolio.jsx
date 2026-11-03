@@ -353,7 +353,7 @@ export default function Portfolio() {
             </div>
           </button>
           <div className="pf-links">
-            <a href={LINKS.resume} target="_blank" rel="noopener noreferrer" className="pf-btn pf-btn--ghost pf-btn--sm">
+            <a href={LINKS.resume} download={LINKS.resumeFile} className="pf-btn pf-btn--ghost pf-btn--sm">
               <Icon name="download" />Resume
             </a>
             <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="pf-textlink">GitHub</a>
@@ -481,6 +481,11 @@ export default function Portfolio() {
                 <button className="pf-chip pf-chip--accent" onClick={copyEmail}>
                   <Icon name={copied ? 'check' : 'content_copy'} size={16} />{copied ? 'Copied' : 'Copy'}
                 </button>
+              </div>
+              <div className="pf-row" style={{ gap: 12 }}>
+                <a href={LINKS.resume} download={LINKS.resumeFile} className="pf-btn pf-btn--ghost">
+                  <Icon name="download" />Download Resume
+                </a>
               </div>
             </div>
             <div className="pf-note-card">
