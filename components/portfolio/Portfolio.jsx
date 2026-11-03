@@ -382,7 +382,7 @@ export default function Portfolio() {
           <div className="pf-polaroid-wrap pf-rise" style={{ animationDelay: '120ms' }}>
             <div className="pf-polaroid">
               <div className="pf-polaroid-img">
-                <Image src="/profile-img.png" alt="Christian Ikirezi" fill sizes="360px" style={{ objectFit: 'cover' }} priority />
+                <Image src="/portrait.jpg" alt="Christian Ikirezi" fill sizes="360px" style={{ objectFit: 'cover', objectPosition: 'center 35%' }} priority />
               </div>
               <div className="pf-hand" style={{ position: 'absolute', left: 0, right: 0, bottom: 14, textAlign: 'center', fontSize: 24, color: '#4B483E' }}>
                 me, probably debugging
