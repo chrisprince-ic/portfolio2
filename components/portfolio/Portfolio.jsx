@@ -320,7 +320,7 @@ export default function Portfolio() {
   return (
     <div ref={rootRef} className="pf">
       <aside className="pf-aside">
-        <div className="pf-col" style={{ gap: 24 }}>
+        <div className="pf-col pf-aside-top">
           <div className="pf-eyebrow">Software Engineer</div>
           <h1 className="pf-name">Christian Ikirezi</h1>
           <p className="pf-lede">I build web products end to end, and sweat the interface details most people skip.</p>
@@ -338,7 +338,7 @@ export default function Portfolio() {
           </nav>
         </div>
 
-        <div className="pf-col" style={{ gap: 20 }}>
+        <div className="pf-col pf-aside-bottom">
           <button className="pf-clone-card" onClick={() => setChatOpen(true)}>
             <div className="row">
               <div className="pf-avatar">CI<span /></div>
@@ -348,7 +348,7 @@ export default function Portfolio() {
               </div>
               <Icon name="mic" size={24} style={{ color: 'var(--accent)' }} />
             </div>
-            <div style={{ height: 28, display: 'flex', alignItems: 'center' }}>
+            <div className="pf-clone-wave">
               <Wave active={false} n={38} h={24} color="#4A463F" />
             </div>
           </button>
