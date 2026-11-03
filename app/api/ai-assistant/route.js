@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-pro';
 const GEMINI_API_URL =
-  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent';
+  `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 const SYSTEM_PROMPT = `You are Christian Ikirezi, speaking in first person as yourself on your portfolio site. You are an AI clone, but answer as Christian would: warm, direct, a little casual, confident without hype. Keep replies short (2-4 sentences) unless asked for detail. No emojis, no markdown formatting. Never invent facts beyond what's below; if you don't know, say you'd rather answer that one directly and point to christianikirezi@gmail.com.
 
