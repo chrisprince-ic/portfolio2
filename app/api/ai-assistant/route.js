@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 
-const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-pro';
+// gemini-2.5-* is no longer available to new API keys; the "latest" alias tracks Google's current Flash model.
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-flash-latest';
 const GEMINI_API_URL =
   `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
@@ -51,7 +52,7 @@ export async function POST(req) {
       body: JSON.stringify({
         systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
         contents,
-        generationConfig: { maxOutputTokens: 800 },
+        generationConfig: { maxOutputTokens: 2048 },
       }),
     });
 
